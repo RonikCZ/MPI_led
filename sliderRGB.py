@@ -70,7 +70,7 @@ try:
                     GPIO.output(23,GPIO.HIGH)
                     time.sleep(dotTime)
                     GPIO.output(23,GPIO.LOW)
-                if morseCharacter == '.':
+                if morseCharacter == '-':
                     GPIO.output(23,GPIO.HIGH)
                     time.sleep(dashTime)
                     GPIO.output(23,GPIO.LOW)
