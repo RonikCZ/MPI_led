@@ -66,13 +66,13 @@ try:
   for character in string:
    morse = CODE[character.upper()]
    for morseCharacter in morse:
-	if morseCharacter == '.':
-	  GPIO.output(23,GPIO.HIGH)
-	  time.sleep(dotTime)
+   if morseCharacter == '.':
+      GPIO.output(23,GPIO.HIGH)
+      time.sleep(dotTime)
       GPIO.output(23,GPIO.LOW)
-	if morseCharacter == '.':
-	  GPIO.output(23,GPIO.HIGH)
-	  time.sleep(dashTime)
+    if morseCharacter == '.':
+      GPIO.output(23,GPIO.HIGH)
+      time.sleep(dashTime)
       GPIO.output(23,GPIO.LOW)
   
 except KeyboardInterrupt:
