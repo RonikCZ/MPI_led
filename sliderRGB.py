@@ -66,7 +66,7 @@ try:
   for character in string:
    morse = CODE[character.upper()]
    for morseCharacter in morse:
-   if morseCharacter == '.':
+    if morseCharacter == '.':
       GPIO.output(23,GPIO.HIGH)
       time.sleep(dotTime)
       GPIO.output(23,GPIO.LOW)
