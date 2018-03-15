@@ -67,13 +67,13 @@ try:
    morse = CODE[character.upper()]
    for morseCharacter in morse:
 	if morseCharacter == '.':
-	   GPIO.output(23,GPIO.HIGH)
-	   time.sleep(dotTime)
-       GPIO.output(23,GPIO.LOW)
+	  GPIO.output(23,GPIO.HIGH)
+	  time.sleep(dotTime)
+      GPIO.output(23,GPIO.LOW)
 	if morseCharacter == '.':
-	   GPIO.output(23,GPIO.HIGH)
-	   time.sleep(dashTime)
-       GPIO.output(23,GPIO.LOW)
+	  GPIO.output(23,GPIO.HIGH)
+	  time.sleep(dashTime)
+      GPIO.output(23,GPIO.LOW)
   
 except KeyboardInterrupt:
  GPIO.output(23,GPIO.LOW)
