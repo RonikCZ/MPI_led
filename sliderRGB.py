@@ -1,6 +1,9 @@
 import RPi.GPIO as GPIO
 import time
 
+dotTime = 0.25
+dashTime = 0.5
+
 GPIO.setwarnings(False)
 
 GPIO.setmode(GPIO.BCM)
@@ -59,10 +62,18 @@ CODE = {' ': ' ',
 
 try:
  while True:
-  GPIO.output(23,GPIO.HIGH)
-  time.sleep(0.5)
-  GPIO.output(23,GPIO.LOW)
-  time.sleep(0.5)
+  string = input("Napis slovo")
+  for character in string:
+   morse = CODE[character.upper()]
+   for morseCharacter in morse:
+	if morseCharacter == '.':
+	   GPIO.output(23,GPIO.HIGH)
+	   time.sleep(dotTime)
+       GPIO.output(23,GPIO.LOW)
+	if morseCharacter == '.':
+	   GPIO.output(23,GPIO.HIGH)
+	   time.sleep(dashTime)
+       GPIO.output(23,GPIO.LOW)
   
 except KeyboardInterrupt:
  GPIO.output(23,GPIO.LOW)
