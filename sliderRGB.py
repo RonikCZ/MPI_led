@@ -61,19 +61,19 @@ CODE = {' ': ' ',
         '_': '..--.-'}
 
 try:
- while True:
-  string = input("Napis slovo")
-  for character in string:
-   morse = CODE[character.upper()]
-   for morseCharacter in morse:
-    if morseCharacter == '.':
-      GPIO.output(23,GPIO.HIGH)
-      time.sleep(dotTime)
-      GPIO.output(23,GPIO.LOW)
-    if morseCharacter == '.':
-      GPIO.output(23,GPIO.HIGH)
-      time.sleep(dashTime)
-      GPIO.output(23,GPIO.LOW)
+    while True:
+        userInput = raw_input("Napis slovo")
+        for character in userInput:
+            morse = CODE[character.upper()]
+            for morseCharacter in morse:
+                if morseCharacter == '.':
+                    GPIO.output(23,GPIO.HIGH)
+                    time.sleep(dotTime)
+                    GPIO.output(23,GPIO.LOW)
+                if morseCharacter == '.':
+                    GPIO.output(23,GPIO.HIGH)
+                    time.sleep(dashTime)
+                    GPIO.output(23,GPIO.LOW)
   
 except KeyboardInterrupt:
  GPIO.output(23,GPIO.LOW)
